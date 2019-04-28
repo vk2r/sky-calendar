@@ -306,7 +306,7 @@ export default {
     },
     mouseenter(e) {
       this.$emit('daymouseenter', this.getDayEvent(e));
-      if (navigator.userAgent.match(/iP(hone|od|ad)/)) {
+      if (!navigator.userAgent.match(/|(?!AppleWebKit.+)Chrome/) && navigator.userAgent.match(/iP(hone|od|ad)/)) {
         this.$emit('dayclick', this.getDayEvent(e));
       }
     },
