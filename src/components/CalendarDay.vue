@@ -309,7 +309,7 @@ export default {
       const isIphone = navigator.userAgent.match(/(iPhone OS 11_)/);
       const altIsIphone =  navigator.userAgent.match(/iP(hone|od|ad)/);
       const isChromeApple = navigator.userAgent.match(/(?!AppleWebKit.+)Chrome/);
-      if (isIPhone && !isChromeApple) {
+      if (isIphone && !isChromeApple) {
         this.$emit('dayclick', this.getDayEvent(e));
       }
     },
