@@ -306,7 +306,10 @@ export default {
     },
     mouseenter(e) {
       this.$emit('daymouseenter', this.getDayEvent(e));
-      if (!navigator.userAgent.match(/|(?!AppleWebKit.+)Chrome/) && navigator.userAgent.match(/iP(hone|od|ad)/)) {
+      const isIphone = navigator.userAgent.match(/(iPhone OS 11_)/);
+      const altIsIphone =  navigator.userAgent.match(/iP(hone|od|ad)/);
+      const isChromeApple = navigator.userAgent.match(/(?!AppleWebKit.+)Chrome/);
+      if (isIPhone && !isChromeApple) {
         this.$emit('dayclick', this.getDayEvent(e));
       }
     },
